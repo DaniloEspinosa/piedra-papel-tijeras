@@ -33,10 +33,12 @@ function jugar() {
 
             let victoriasMP3 = document.getElementById("victoria")
             let victoriasPC = document.getElementById("derrota")
+            let sonidoEmpates = document.getElementById("empate")
 
             if (eleccionJugador == eleccionPc) {
                 alert("¡Hemos empatado!")
                 empates++
+                sonidoEmpates.play()
             } else if ((eleccionJugador == 1 && eleccionPc == 3) || (eleccionJugador == 2 && eleccionPc == 1) || (eleccionJugador == 3 && eleccionPc == 2)) {
                 alert("has ganado")
                 victoriasJugador++
@@ -86,11 +88,11 @@ function jugar() {
             document.getElementById("respuesta").innerHTML = tablaMarcador
 
             if (victoriasJugador > victoriasPc) {
-                document.querySelector("#imagen").innerHTML = `<img src="Piedra-Papel-Tijeras__HTML-main/img/copa_500px.jpg">`
+                document.querySelector("#imagen").innerHTML = `<img src="Piedra-Papel-Tijeras__HTML-main/img/dance-dancing.gif">`
             } else if (victoriasJugador == victoriasPc) {
                 document.querySelector("#imagen").innerHTML = `<img src="Piedra-Papel-Tijeras__HTML-main/img/estrecharme-mano_500px.jpg">`
             } else {
-                document.querySelector("#imagen").innerHTML = `<img src="Piedra-Papel-Tijeras__HTML-main/img/malament_500px.jpg">`
+                document.querySelector("#imagen").innerHTML = `<img src="Piedra-Papel-Tijeras__HTML-main/img/perder.gif">`
             }
         }
 
